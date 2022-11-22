@@ -10,13 +10,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'white': '#FCFCFC',
-        'black': '#1D201F',
-        'green': '#00DC82',
-        'red': '#E63946',
+        white: '#FCFCFC',
+        black: '#1D201F',
+        green: '#00DC82',
+        red: '#E63946',
       },
     },
   },
   plugins: [],
-  darkMode: 'media'
+  darkMode: 'media',
 }

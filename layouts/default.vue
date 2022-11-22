@@ -1,8 +1,8 @@
 <template>
-    <div>
-        <AppBar />
-        <main>
-            <Nuxt />
-        </main>
-    </div>
+  <div>
+    <AppBar />
+    <main>
+      <Nuxt />
+    </main>
+  </div>
 </template>

@@ -1,5 +1,3 @@
 <template>
-    <div>
-        AppBar
-    </div>
+  <div>AppBar</div>
 </template>
