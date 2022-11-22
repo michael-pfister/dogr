@@ -1,7 +1,7 @@
 <template>
-  <div class="w-screen h-screen flex justify-center items-center gap-4">
+  <div class="w-full my-64 flex justify-center items-center gap-4">
     <NuxtLogo class="w-16" />
-    <h1 class="text-5xl">Setup Complete</h1>
+    <h1>Setup Complete</h1>
   </div>
 </template>
 
