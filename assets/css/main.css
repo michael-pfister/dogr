@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-white text-black dark:bg-black dark:text-white;
+    @apply transition max-w-screen-xl mx-auto bg-white text-black dark:bg-black dark:text-white;
   }
 
   header {
@@ -23,5 +23,9 @@
 
   a {
     @apply cursor-pointer;
+  }
+
+  .icon {
+    @apply w-8 h-8;
   }
 }
