@@ -2,7 +2,7 @@
   <header>
     <nuxt-link class="flex gap-2 items-center h-12" to="/">
       <NuxtLogo class="w-8" />
-      <h3>Dogr.</h3>
+      <h3>Dogr<text class="text-green">.</text></h3>
     </nuxt-link>
     <nav>
       <ul class="flex gap-4 text-xl">
