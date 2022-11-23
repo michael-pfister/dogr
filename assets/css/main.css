@@ -7,10 +7,21 @@
     @apply bg-white text-black dark:bg-black dark:text-white;
   }
 
+  header {
+    @apply flex p-4 items-center justify-between;
+  }
+
   h1 {
     @apply text-6xl;
   }
   h2 {
-    @apply text-xl;
+    @apply text-4xl;
+  }
+  h3 {
+    @apply text-2xl;
+  }
+
+  a {
+    @apply cursor-pointer;
   }
 }
