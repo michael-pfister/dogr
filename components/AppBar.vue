@@ -1,6 +1,6 @@
 <template>
   <header>
-    <div class="flex gap-4 items-center">
+    <div class="flex gap-2 items-center">
       <nuxt-link class="flex gap-2 items-center h-12" to="/">
         <NuxtLogo class="w-8" />
         <h3>Dogr<text class="text-green">.</text></h3>
@@ -14,18 +14,47 @@
       </button>
     </div>
     <nav>
-      <!-- App, Sign in, Sign Up, -->
-      <ul class="flex gap-8 text-xl">
-        <li>
-          <nuxt-link to="/signup">Login</nuxt-link>
+      <ul class="flex gap-8 text-xl items-center">
+        <li class="md:inline-block hidden">
+          <nuxt-link to="/signin">Sign In</nuxt-link>
         </li>
-        <li>
+        <li class="md:inline-block hidden">
           <nuxt-link to="/signup">Create Account</nuxt-link>
         </li>
         <li>
-          <nuxt-link to="/app" class="p-2 bg-green text-black rounded"
-            >Find Images</nuxt-link
+          <div class="flex items-center gap-2">
+            <nuxt-link to="/app" class="p-2 bg-green text-black rounded"
+              >Find Images</nuxt-link
+            >
+            <button
+              id="mobile_menu_toggle"
+              class="p-3 rounded bg-black dark:bg-white md:hidden"
+              @click="openMobileMenu"
+            >
+              <img
+                src="~/assets/img/down-arrow-svgrepo-com.svg"
+                class="h-[1.25rem] invert dark:invert-0"
+              />
+            </button>
+          </div>
+          <!-- Mobile Menu -->
+          <div
+            id="mobile_menu"
+            class="hidden absolute md:hidden mt-2 rounded w-[175px] bg-black text-white dark:bg-white dark:text-black"
           >
+            <ul>
+              <li>
+                <nuxt-link to="/signin" class="block w-full p-2"
+                  >Sign In</nuxt-link
+                >
+              </li>
+              <li>
+                <nuxt-link to="/signup" class="block w-full p-2"
+                  >Create Account</nuxt-link
+                >
+              </li>
+            </ul>
+          </div>
         </li>
       </ul>
     </nav>
@@ -40,6 +69,7 @@ export default Vue.extend({
   data() {
     return {
       theme: 'light',
+      mobileMenuOpen: false,
     }
   },
   beforeMount() {
@@ -55,11 +85,37 @@ export default Vue.extend({
     toggleTheme() {
       this.theme = this.theme === 'light' ? 'dark' : 'light'
 
-      this.theme === 'dark'
-        ? document.documentElement.classList.add('dark')
-        : document.documentElement.classList.remove('dark')
+      document.documentElement.classList.toggle('dark')
 
       localStorage.setItem('theme', this.theme)
+    },
+    openMobileMenu() {
+      // Toggle Button
+
+      document
+        .getElementById('mobile_menu_toggle')
+        ?.classList.toggle('rotate-180')
+      document
+        .getElementById('mobile_menu_toggle')
+        ?.classList.toggle('animate-flip')
+
+      !this.mobileMenuOpen &&
+        document
+          .getElementById('mobile_menu_toggle')
+          ?.classList.remove('animate-flipreverse')
+      this.mobileMenuOpen &&
+        document
+          .getElementById('mobile_menu_toggle')
+          ?.classList.add('animate-flipreverse')
+
+      // Menu
+
+      document.getElementById('mobile_menu')?.classList.toggle('hidden')
+      document
+        .getElementById('mobile_menu')
+        ?.classList.toggle('animate-gainheight')
+
+      this.mobileMenuOpen = !this.mobileMenuOpen
     },
   },
 })
