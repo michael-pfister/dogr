@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Dogr. | Find Images of Any Dog Breed',
+    title: 'Dogr. | Find Pictures of Any Dog Breed',
     htmlAttrs: {
       lang: 'en',
     },

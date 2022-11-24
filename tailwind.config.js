@@ -15,6 +15,9 @@ module.exports = {
         green: '#00DC82',
         red: '#E63946',
       },
+      backgroundImage: {
+        'hero-pattern': "url('~/assets/img/blob-haikei.svg')",
+      },
       keyframes: {
         wiggle: {
           '0%, 100%': { transform: 'rotate(-3deg)' },
