@@ -46,8 +46,11 @@ jobs:
         run: yarn
 
       - name: Build and run application ⚗️
-        run: yarn build
-        run: yarn start
+        - steps:
+          - name: Build
+            run: yarn build
+          - name: Run
+            run: yarn start
 
       - name: Run linter 👀
         run: yarn lint

@@ -41,7 +41,19 @@
     @apply flex flex-wrap gap-2 justify-center;
   }
 
-  .dogList > li {
+  .dogList li {
     @apply w-full sm:w-64;
+  }
+
+  .pageNavigation {
+    @apply w-full flex justify-center gap-2;
+  }
+
+  .pageNavigation li button {
+    @apply rounded p-2;
+  }
+
+  .pageNavigation li .selected {
+    @apply text-green underline;
   }
 }

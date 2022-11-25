@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="my-16 p-2">
+    <section class="my-8 p-2">
       <ul class="dogList">
         <li v-for="picture in getPictures()" :key="picture">
           <ImageDisplay
@@ -10,6 +10,12 @@
         </li>
       </ul>
     </section>
+    <PageNavigation
+      :display-count="10"
+      :item-count="100"
+      :initial-selected-page="1"
+      @page-selected="onPageSelected"
+      />
   </div>
 </template>
 
@@ -83,6 +89,10 @@ export default defineComponent({
       const breed = source.split('/')[4]
 
       return breed
+    },
+    onPageSelected(page: number) {
+      this.index[0] = (page - 1) * 10
+      this.index[1] = page * 10
     },
   },
 })
