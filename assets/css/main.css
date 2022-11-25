@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply transition max-w-screen-xl mx-auto bg-white text-black dark:bg-black dark:text-white;
+    @apply transition max-w-screen-xl mx-auto bg-white text-black dark:bg-black dark:text-white overflow-x-hidden;
   }
 
   header {
@@ -27,5 +27,21 @@
 
   .icon {
     @apply w-8 h-8;
+  }
+
+  .imageDisplay {
+    @apply w-full sm:w-64 aspect-video rounded flex justify-center items-center overflow-hidden hover:scale-110 transition-transform;
+  }
+
+  .imageDisplay > img {
+    @apply w-full h-full object-cover;
+  }
+
+  .dogList {
+    @apply flex flex-wrap gap-2 justify-center;
+  }
+
+  .dogList > li {
+    @apply w-full sm:w-64;
   }
 }
