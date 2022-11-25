@@ -45,12 +45,11 @@ jobs:
       - name: Install dependencies 👨🏻‍💻
         run: yarn
 
-      - name: Build and run application ⚗️
-        - steps:
-          - name: Build
-            run: yarn build
-          - name: Run
-            run: yarn start
+      - name: Build Application ⚗️
+        run: yarn build
+
+      - name: Run Application 🛫
+        run: yarn start
 
       - name: Run linter 👀
         run: yarn lint

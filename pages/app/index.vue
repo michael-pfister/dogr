@@ -15,7 +15,8 @@
       :item-count="100"
       :initial-selected-page="1"
       @page-selected="onPageSelected"
-      />
+    />
+    {{ index }}
   </div>
 </template>
 
@@ -60,14 +61,6 @@ export default defineComponent({
     }
   },
   methods: {
-    incrementIndex() {
-      this.index[0] += 10
-      this.index[1] += 10
-    },
-    decrementIndex() {
-      this.index[0] -= 10
-      this.index[1] -= 10
-    },
     getPictures() {
       const images = []
       let numberOfDisplayedPictures = 0
@@ -93,6 +86,8 @@ export default defineComponent({
     onPageSelected(page: number) {
       this.index[0] = (page - 1) * 10
       this.index[1] = page * 10
+      console.log(page)
+      console.log(this.index)
     },
   },
 })
