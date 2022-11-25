@@ -11,12 +11,11 @@
       </ul>
     </section>
     <PageNavigation
-      :display-count="10"
-      :item-count="100"
+      :nav-item-count="10"
+      :item-count="getPictureLength()"
       :initial-selected-page="1"
       @page-selected="onPageSelected"
     />
-    {{ index }}
   </div>
 </template>
 
@@ -66,13 +65,16 @@ export default defineComponent({
       let numberOfDisplayedPictures = 0
 
       for (let i = 0; i < this.pictures.length; i++) {
-        for (let j = 0; j < this.pictures[i].pictures.length; j++) {
+        const breed = this.pictures[i]
+        for (let j = 0; j < breed.pictures.length; j++) {
+          const picture = breed.pictures[j]
           if (
-            numberOfDisplayedPictures < Math.abs(this.index[0] - this.index[1])
+            numberOfDisplayedPictures >= this.index[0] &&
+            numberOfDisplayedPictures < this.index[1]
           ) {
-            images.push(this.pictures[i].pictures[j])
-            numberOfDisplayedPictures++
+            images.push(picture)
           }
+          numberOfDisplayedPictures++
         }
       }
 
@@ -84,10 +86,27 @@ export default defineComponent({
       return breed
     },
     onPageSelected(page: number) {
+      /* 
+      
+      Doesn't work because the index is not reactive.
+
       this.index[0] = (page - 1) * 10
-      this.index[1] = page * 10
-      console.log(page)
-      console.log(this.index)
+      this.index[1] = page * 10 
+      
+      */
+
+      this.index.splice(0, 1, (page - 1) * 10)
+      this.index.splice(1, 1, page * 10)
+    },
+    getPictureLength() {
+      let length = 0
+
+      for (let i = 0; i < this.pictures.length; i++) {
+        const breed = this.pictures[i]
+        length += breed.pictures.length
+      }
+
+      return length
     },
   },
 })

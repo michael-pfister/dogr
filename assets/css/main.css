@@ -46,7 +46,7 @@
   }
 
   .pageNavigation {
-    @apply w-full flex justify-center gap-2;
+    @apply w-full flex flex-wrap justify-center gap-2;
   }
 
   .pageNavigation li button {
@@ -55,5 +55,9 @@
 
   .pageNavigation li .selected {
     @apply text-green underline;
+  }
+
+  .pageNavigation h2 {
+    @apply w-full text-center;
   }
 }
