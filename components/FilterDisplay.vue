@@ -1,10 +1,19 @@
 <template>
   <section class="flex justify-center">
     <ul class="flex flex-wrap gap-4">
-        <li v-for="searchterm in filter" :key="`filter_${searchterm}`" class="p-2 flex gap-1 items-center bg-green rounded-full animate-gainwidth">
-            <button @click="removeFilter(searchterm)"><img src="~/assets/img/remove-svgrepo-com.svg" aria-label="remove this filter" /></button>
-            {{searchterm}}
-        </li>
+      <li
+        v-for="searchterm in filter"
+        :key="`filter_${searchterm}`"
+        class="p-2 flex gap-1 items-center bg-green rounded-full animate-gainwidth"
+      >
+        <button @click="removeFilter(searchterm)">
+          <img
+            src="~/assets/img/remove-svgrepo-com.svg"
+            aria-label="remove this filter"
+          />
+        </button>
+        {{ searchterm }}
+      </li>
     </ul>
   </section>
 </template>

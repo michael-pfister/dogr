@@ -1,6 +1,9 @@
 <template>
   <div>
-    <SearchWidget :search-options="getBreeds()" @search-result-selected="addFilter" />
+    <SearchWidget
+      :search-options="getBreeds()"
+      @search-result-selected="addFilter"
+    />
     <FilterDisplay :filter="filter" @filter-removed="removeFilter" />
     <section class="my-8 p-2">
       <ul class="dogList">
@@ -24,7 +27,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import ImageDisplay from '~/components/ImageDisplay.vue'
-import SearchWidget from '~/components/SearchWidget.vue';
+import SearchWidget from '~/components/SearchWidget.vue'
 
 export default defineComponent({
   components: { ImageDisplay, SearchWidget },
@@ -61,7 +64,7 @@ export default defineComponent({
     return {
       pictures,
       index,
-      filter
+      filter,
     }
   },
   methods: {

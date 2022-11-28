@@ -73,7 +73,7 @@
     @apply w-6 h-6;
   }
 
-  .searchWidget > div > input{
+  .searchWidget > div > input {
     @apply focus:outline-none bg-transparent;
   }
 

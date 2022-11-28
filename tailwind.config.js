@@ -38,7 +38,7 @@ module.exports = {
         gainwidth: {
           '0%': { 'max-width': '0' },
           '100%': { 'max-width': '100%' },
-        }
+        },
       },
       animation: {
         wiggle: 'wiggle 0.2s ease-in-out infinite',
