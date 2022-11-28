@@ -70,10 +70,13 @@ export default defineComponent({
   methods: {
     getPictures() {
       const images = []
+      const filteredPictures = this.filter.length ? this.pictures.filter((picture) =>
+        this.filter.includes(picture.breed)
+      ) : this.pictures
       let numberOfDisplayedPictures = 0
 
-      for (let i = 0; i < this.pictures.length; i++) {
-        const breed = this.pictures[i]
+      for (let i = 0; i < filteredPictures.length; i++) {
+        const breed = filteredPictures[i]
         for (let j = 0; j < breed.pictures.length; j++) {
           const picture = breed.pictures[j]
           if (

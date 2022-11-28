@@ -1,6 +1,6 @@
 <template>
   <section class="flex justify-center">
-    <ul class="flex flex-wrap gap-4">
+    <ul class="flex flex-wrap justify-center gap-4">
       <li
         v-for="searchterm in filter"
         :key="`filter_${searchterm}`"
