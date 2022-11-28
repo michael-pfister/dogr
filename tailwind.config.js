@@ -35,12 +35,17 @@ module.exports = {
           '0%': { 'max-height': '0' },
           '100%': { 'max-height': '100%' },
         },
+        gainwidth: {
+          '0%': { 'max-width': '0' },
+          '100%': { 'max-width': '100%' },
+        }
       },
       animation: {
         wiggle: 'wiggle 0.2s ease-in-out infinite',
         flip: 'flip 0.2s ease-in-out',
         flipreverse: 'flipreverse 0.2s ease-in-out',
-        gainheight: 'gainheight 0.5s ease-in-out',
+        gainheight: 'gainheight 0.2s ease-out',
+        gainwidth: 'gainwidth 0.5s',
       },
     },
   },

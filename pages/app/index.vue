@@ -1,6 +1,7 @@
 <template>
   <div>
     <SearchWidget :search-options="getBreeds()" @search-result-selected="addFilter" />
+    <FilterDisplay :filter="filter" @filter-removed="removeFilter" />
     <section class="my-8 p-2">
       <ul class="dogList">
         <li v-for="picture in getPictures()" :key="picture">
@@ -118,6 +119,10 @@ export default defineComponent({
     },
     addFilter(filter: string) {
       this.filter.push(filter)
+    },
+    removeFilter(filter: string) {
+      const index = this.filter.indexOf(filter)
+      this.filter.splice(index, 1)
     },
   },
 })
