@@ -1,5 +1,6 @@
 <template>
   <div>
+    <SearchWidget :search-options="getBreeds()" @search-result-selected="addFilter" />
     <section class="my-8 p-2">
       <ul class="dogList">
         <li v-for="picture in getPictures()" :key="picture">
@@ -22,9 +23,10 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import ImageDisplay from '~/components/ImageDisplay.vue'
+import SearchWidget from '~/components/SearchWidget.vue';
 
 export default defineComponent({
-  components: { ImageDisplay },
+  components: { ImageDisplay, SearchWidget },
   async asyncData({
     $axios,
   }): Promise<{ pictures: { breed: string; pictures: string[] }[] }> {
@@ -53,10 +55,12 @@ export default defineComponent({
   data() {
     const pictures: { breed: string; pictures: string[] }[] = []
     const index: [number, number] = [0, 10]
+    const filter: string[] = []
 
     return {
       pictures,
       index,
+      filter
     }
   },
   methods: {
@@ -107,6 +111,13 @@ export default defineComponent({
       }
 
       return length
+    },
+    getBreeds() {
+      const breeds = this.pictures.map((breed) => breed.breed)
+      return breeds
+    },
+    addFilter(filter: string) {
+      this.filter.push(filter)
     },
   },
 })

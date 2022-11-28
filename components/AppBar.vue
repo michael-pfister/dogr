@@ -16,10 +16,7 @@
     <nav>
       <ul class="flex gap-8 text-xl items-center">
         <li class="md:inline-block hidden">
-          <nuxt-link to="/signin">Sign In</nuxt-link>
-        </li>
-        <li class="md:inline-block hidden">
-          <nuxt-link to="/signup">Create Account</nuxt-link>
+          <nuxt-link to="/mydogs">My Dogs</nuxt-link>
         </li>
         <li>
           <div class="flex items-center gap-2">
@@ -44,13 +41,8 @@
           >
             <ul>
               <li>
-                <nuxt-link to="/signin" class="block w-full p-2"
-                  >Sign In</nuxt-link
-                >
-              </li>
-              <li>
-                <nuxt-link to="/signup" class="block w-full p-2"
-                  >Create Account</nuxt-link
+                <nuxt-link to="/mydogs" class="block w-full p-2"
+                  >My Dogs</nuxt-link
                 >
               </li>
             </ul>
