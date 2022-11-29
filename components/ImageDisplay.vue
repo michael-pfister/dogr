@@ -1,10 +1,24 @@
 <template>
   <div :class="`imageDisplay${!loaded ? ' animate-pulse' : ''}`">
+    <div
+      class="w-[inherit] aspect-[inherit] rounded-[inherit] absolute z-10 hover:bg-[rgba(0,0,0,0.8)] transition-all group"
+    >
+      <button
+        aria-label="add to favorites"
+        class="hidden group-hover:flex w-full h-full justify-center items-center active:scale-90 transition-transform"
+      >
+        <img
+          src="~/assets/img/heart-svgrepo-com.svg"
+          class="w-12 aspect-auto"
+        />
+      </button>
+    </div>
     <img :src="picture" @load="setloaded()" />
   </div>
 </template>
 
 <script lang="ts">
+import axios from 'axios'
 import { defineComponent } from 'vue'
 
 export default defineComponent({

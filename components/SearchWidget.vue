@@ -39,6 +39,7 @@ export default defineComponent({
   },
   methods: {
     onResultSelected(result: string) {
+      this.searchTerm = ''
       this.$emit('search-result-selected', result)
     },
     getResults(): string[] {

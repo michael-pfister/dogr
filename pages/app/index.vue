@@ -16,7 +16,7 @@
       </ul>
     </section>
     <PageNavigation
-      :nav-item-count="10"
+      :nav-item-count="Math.abs(index[1] - index[0])"
       :item-count="getPictureLength()"
       :initial-selected-page="1"
       @page-selected="onPageSelected"
@@ -58,7 +58,7 @@ export default defineComponent({
   },
   data() {
     const pictures: { breed: string; pictures: string[] }[] = []
-    const index: [number, number] = [0, 10]
+    const index: [number, number] = [0, 25]
     const filter: string[] = []
 
     return {
@@ -104,8 +104,10 @@ export default defineComponent({
       
       */
 
-      this.index.splice(0, 1, (page - 1) * 10)
-      this.index.splice(1, 1, page * 10)
+      const interval = Math.abs(this.index[1] - this.index[0])
+
+      this.index.splice(0, 1, (page - 1) * interval)
+      this.index.splice(1, 1, page * interval)
     },
     getPictureLength() {
       let length = 0

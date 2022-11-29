@@ -1,6 +1,6 @@
 <template>
   <section class="pageNavigation my-8">
-    <h2>d{{ 'o'.repeat(navItemCount) }}gr</h2>
+    <h2>d{{ 'o'.repeat(getIndexLength()) }}gr</h2>
     <ul
       v-for="page in getPages().slice(index[0], index[1])"
       :key="`navigation-page-${page}`"
@@ -41,7 +41,7 @@ export default defineComponent({
   data() {
     return {
       selectedPage: this.initialSelectedPage,
-      index: [0, this.navItemCount],
+      index: [0, 10], // change number of pages shown here
     }
   },
   methods: {
@@ -61,12 +61,17 @@ export default defineComponent({
         this.decrementIndex()
     },
     incrementIndex() {
-      this.index[0] += Math.ceil(this.navItemCount / 2)
-      this.index[1] += Math.ceil(this.navItemCount / 2)
+      const indexLength = this.getIndexLength()
+      this.index[0] += Math.ceil(indexLength / 2)
+      this.index[1] += Math.ceil(indexLength / 2)
     },
     decrementIndex() {
-      this.index[0] -= Math.ceil(this.navItemCount / 2)
-      this.index[1] -= Math.ceil(this.navItemCount / 2)
+      const indexLength = this.getIndexLength()
+      this.index[0] -= Math.ceil(indexLength / 2)
+      this.index[1] -= Math.ceil(indexLength / 2)
+    },
+    getIndexLength() {
+      return Math.abs(this.index[1] - this.index[0])
     },
   },
 })
