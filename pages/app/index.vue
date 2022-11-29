@@ -70,9 +70,7 @@ export default defineComponent({
   methods: {
     getPictures() {
       const images = []
-      const filteredPictures = this.filter.length ? this.pictures.filter((picture) =>
-        this.filter.includes(picture.breed)
-      ) : this.pictures
+      const filteredPictures = this.getFilteredPictures()
       let numberOfDisplayedPictures = 0
 
       for (let i = 0; i < filteredPictures.length; i++) {
@@ -111,9 +109,10 @@ export default defineComponent({
     },
     getPictureLength() {
       let length = 0
+      const filteredPictures = this.getFilteredPictures()
 
-      for (let i = 0; i < this.pictures.length; i++) {
-        const breed = this.pictures[i]
+      for (let i = 0; i < filteredPictures.length; i++) {
+        const breed = filteredPictures[i]
         length += breed.pictures.length
       }
 
@@ -129,6 +128,11 @@ export default defineComponent({
     removeFilter(filter: string) {
       const index = this.filter.indexOf(filter)
       this.filter.splice(index, 1)
+    },
+    getFilteredPictures() {
+      return this.filter.length
+        ? this.pictures.filter((picture) => this.filter.includes(picture.breed))
+        : this.pictures
     },
   },
 })

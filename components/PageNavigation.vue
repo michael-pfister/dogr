@@ -2,7 +2,7 @@
   <section class="pageNavigation my-8">
     <h2>d{{ 'o'.repeat(navItemCount) }}gr</h2>
     <ul
-      v-for="page in pages.slice(index[0], index[1])"
+      v-for="page in getPages().slice(index[0], index[1])"
       :key="`navigation-page-${page}`"
     >
       <li>
@@ -39,18 +39,18 @@ export default defineComponent({
   },
   emits: ['page-selected'],
   data() {
-    const pages = Array.from(
-      { length: Math.ceil(this.itemCount / this.navItemCount) },
-      (_, i) => i + 1
-    )
-
     return {
-      pages,
       selectedPage: this.initialSelectedPage,
       index: [0, this.navItemCount],
     }
   },
   methods: {
+    getPages() {
+      return Array.from(
+        { length: Math.ceil(this.itemCount / this.navItemCount) },
+        (_, i) => i + 1
+      )
+    },
     selectPage(page: number) {
       this.selectedPage = page
       this.$emit('page-selected', page)
