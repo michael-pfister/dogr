@@ -34,7 +34,7 @@
   }
 
   .imageDisplay > img {
-    @apply w-full h-full object-cover;
+    @apply w-full h-full object-cover bg-[rgba(0,0,0,0.5)];
   }
 
   .dogList {

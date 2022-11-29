@@ -1,6 +1,6 @@
 <template>
-  <div class="imageDisplay">
-    <img :src="picture" />
+  <div :class="`imageDisplay${!loaded ? ' animate-pulse' : ''}`">
+    <img :src="picture" @load="setloaded()" />
   </div>
 </template>
 
@@ -13,6 +13,16 @@ export default defineComponent({
     picture: {
       type: String,
       required: true,
+    },
+  },
+  data() {
+    return {
+      loaded: false,
+    }
+  },
+  methods: {
+    setloaded() {
+      this.loaded = true
     },
   },
 })
