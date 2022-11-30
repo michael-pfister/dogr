@@ -4,8 +4,11 @@
       :search-options="getBreeds()"
       @search-result-selected="addFilter"
     />
-    <FilterDisplay :filter="filter" @filter-removed="removeFilter" />
-    <section class="my-8 p-2">
+    <section id="control_section" class="flex justify-between p-2">
+      <FilterDisplay :filter="filter" @filter-removed="removeFilter" />
+      <IndexSelector @index-selected="onIndexSelected" />
+    </section>
+    <section class="p-2">
       <ul class="dogList">
         <li v-for="picture in getPictures()" :key="picture">
           <ImageDisplay
@@ -58,7 +61,7 @@ export default defineComponent({
   },
   data() {
     const pictures: { breed: string; pictures: string[] }[] = []
-    const index: [number, number] = [0, 25]
+    const index: [number, number] = [0, 10]
     const filter: string[] = []
 
     return {
@@ -66,6 +69,18 @@ export default defineComponent({
       index,
       filter,
     }
+  },
+  mounted() {
+    // Horizontally align the control section to the doglist
+    let dogListWidth = document.querySelector('.dogList')?.clientWidth
+    dogListWidth = dogListWidth ? (dogListWidth % 256) / 2 : 0 // Rule out undefined values
+
+    document
+      .querySelector('#control_section')
+      ?.setAttribute(
+        'style',
+        `padding-left: ${dogListWidth}px; padding-right: ${dogListWidth}px`
+      ) // Set padding to align the control section to the doglist
   },
   methods: {
     getPictures() {
@@ -135,6 +150,9 @@ export default defineComponent({
       return this.filter.length
         ? this.pictures.filter((picture) => this.filter.includes(picture.breed))
         : this.pictures
+    },
+    onIndexSelected(value: number) {
+      this.index.splice(1, 1, value)
     },
   },
 })

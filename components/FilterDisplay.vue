@@ -1,5 +1,5 @@
 <template>
-  <section class="flex justify-center">
+  <div class="flex justify-center">
     <ul class="flex flex-wrap justify-center gap-4">
       <li
         v-for="searchterm in filter"
@@ -10,12 +10,13 @@
           <img
             src="~/assets/img/remove-svgrepo-com.svg"
             aria-label="remove this filter"
+            class="invert dark:invert-0"
           />
         </button>
         {{ searchterm }}
       </li>
     </ul>
-  </section>
+  </div>
 </template>
 
 <script lang="ts">

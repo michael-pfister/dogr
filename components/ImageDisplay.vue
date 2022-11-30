@@ -1,7 +1,7 @@
 <template>
   <div :class="`imageDisplay${!loaded ? ' animate-pulse' : ''}`">
     <div
-      class="w-[inherit] aspect-[inherit] rounded-[inherit] absolute z-10 hover:bg-[rgba(0,0,0,0.8)] transition-all group"
+      class="w-64 aspect-[inherit] rounded-[inherit] absolute z-10 hover:bg-[rgba(0,0,0,0.8)] transition-all group"
     >
       <button
         aria-label="add to favorites"
@@ -18,7 +18,6 @@
 </template>
 
 <script lang="ts">
-import axios from 'axios'
 import { defineComponent } from 'vue'
 
 export default defineComponent({

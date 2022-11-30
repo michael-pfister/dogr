@@ -42,7 +42,7 @@
   }
 
   .dogList li {
-    @apply w-full sm:w-64;
+    @apply w-64;
   }
 
   .pageNavigation {
@@ -83,5 +83,21 @@
 
   .searchWidget > ul > li > button {
     @apply w-full p-2 hover:bg-gray-200 dark:hover:bg-gray-800 rounded;
+  }
+
+  select {
+    @apply absolute z-10 -translate-x-2 px-2 w-[inherit] h-[inherit] bg-transparent focus:outline-none cursor-pointer appearance-none;
+  }
+
+  select option {
+    @apply dark:bg-black;
+  }
+
+  .selectdiv {
+    @apply flex items-center gap-2 w-20 h-8 p-2 rounded border;
+  }
+
+  .selectdiv::after {
+    @apply content-['<>'] font-mono border-t-2 -rotate-90 flex items-end ml-12;
   }
 }
