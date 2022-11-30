@@ -19,13 +19,13 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   name: 'IndexSelector',
   emits: ['index-selected'],
-  created() {
-    this.$options.options = [10, 25, 50, '♾']
-  },
   data() {
     return {
       selectedOption: 10,
     }
+  },
+  created() {
+    this.$options.options = [10, 25, 50, '♾']
   },
   methods: {
     onIndexSelected() {
