@@ -19,6 +19,7 @@
       </ul>
     </section>
     <PageNavigation
+      v-if="!infiniteScroll"
       :nav-item-count="Math.abs(index[1] - index[0])"
       :item-count="getPictureLength()"
       :initial-selected-page="1"
@@ -68,6 +69,7 @@ export default defineComponent({
       pictures,
       index,
       filter,
+      infiniteScroll: false,
     }
   },
   mounted() {
@@ -81,6 +83,9 @@ export default defineComponent({
         'style',
         `padding-left: ${dogListWidth}px; padding-right: ${dogListWidth}px`
       ) // Set padding to align the control section to the doglist
+
+    // Infinte Scroll
+    window.addEventListener('scroll', this.handleScroll)
   },
   methods: {
     getPictures() {
@@ -151,8 +156,25 @@ export default defineComponent({
         ? this.pictures.filter((picture) => this.filter.includes(picture.breed))
         : this.pictures
     },
-    onIndexSelected(value: number) {
-      this.index.splice(1, 1, value)
+    onIndexSelected(value: number | '♾') {
+      if (value === '♾') {
+        this.infiniteScroll = true
+        this.index.splice(1, 1, 50)
+      } else {
+        this.infiniteScroll = false
+        this.index.splice(1, 1, value)
+      }
+    },
+    handleScroll() {
+      if (this.infiniteScroll) {
+        const scrollHeight = document.documentElement.scrollHeight
+        const scrollTop = document.documentElement.scrollTop
+        const clientHeight = document.documentElement.clientHeight
+
+        if (scrollTop + clientHeight >= scrollHeight - clientHeight) {
+          this.index.splice(1, 1, this.index[1] + 20)
+        }
+      }
     },
   },
 })
