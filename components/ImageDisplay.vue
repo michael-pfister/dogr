@@ -1,7 +1,7 @@
 <template>
   <div :class="`imageDisplay${!loaded ? ' animate-pulse' : ''}`">
     <div
-      class="w-64 aspect-[inherit] rounded-[inherit] absolute z-10 hover:bg-[rgba(0,0,0,0.8)] transition-all group"
+      class="w-[calc(50%-1rem)] sm:w-64 aspect-[inherit] rounded-[inherit] absolute z-10 hover:bg-[rgba(0,0,0,0.8)] transition-all group"
     >
       <button
         aria-label="add to favorites"

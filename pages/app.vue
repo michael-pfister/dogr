@@ -74,16 +74,18 @@ export default defineComponent({
   },
   mounted() {
     // Horizontally align the control section to the doglist
-    let dogListWidth = document.querySelector('.dogList')?.clientWidth
-    dogListWidth = dogListWidth ? (dogListWidth % 256) / 2 : 0 // Rule out undefined values
+    if (window.screen.width > 640 /* = sm */) {
+      let dogListWidth = document.querySelector('.dogList')?.clientWidth
 
-    document
-      .querySelector('#control_section')
-      ?.setAttribute(
-        'style',
-        `padding-left: ${dogListWidth}px; padding-right: ${dogListWidth}px`
-      ) // Set padding to align the control section to the doglist
+      dogListWidth = dogListWidth ? (dogListWidth % 256) / 2 : 0 // Rule out undefined values
 
+      document
+        .querySelector('#control_section')
+        ?.setAttribute(
+          'style',
+          `padding-left: ${dogListWidth}px; padding-right: ${dogListWidth}px`
+        ) // Set padding to align the control section to the doglist
+    }
     // Infinte Scroll
     window.addEventListener('scroll', this.handleScroll)
   },
