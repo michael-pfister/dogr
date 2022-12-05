@@ -14,12 +14,17 @@
     "lintfix": "prettier --write --list-different . && yarn lint:js --fix"
   },
   "dependencies": {
+    "@babel/core": "^7.20.5",
     "@nuxtjs/axios": "^5.13.6",
+    "buffer": "^6.0.3",
+    "consola": "*",
     "core-js": "^3.25.3",
     "nuxt-edge": "latest",
+    "typescript": "^4.9.3",
     "vue": "^2.7.10",
     "vue-server-renderer": "^2.7.10",
-    "vue-template-compiler": "^2.7.10"
+    "vue-template-compiler": "^2.7.10",
+    "webpack": "5.0.0"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.19.1",
