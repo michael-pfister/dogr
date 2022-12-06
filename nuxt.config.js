@@ -52,5 +52,5 @@ export default {
     },
   },
 
-  target: 'static'
+  target: 'static',
 }
