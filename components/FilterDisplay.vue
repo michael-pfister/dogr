@@ -10,7 +10,7 @@
           <img
             src="~/assets/img/remove-svgrepo-com.svg"
             aria-label="remove this filter"
-            class="invert dark:invert-0"
+            class="filter invert dark:invert-0"
           />
         </button>
         {{ searchterm }}
