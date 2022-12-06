@@ -9,7 +9,8 @@
         <img
           id="lightbulb"
           src="~/assets/img/light-bulb-svgrepo-com.svg"
-          :class="`icon${theme === 'dark' ? ' filter invert' : ''}`"
+          class="icon"
+          :style="theme === 'dark' ? 'filter: invert(1);' : ''"
         />
       </button>
     </div>
@@ -30,7 +31,10 @@
             >
               <img
                 src="~/assets/img/down-arrow-svgrepo-com.svg"
-                class="h-[1.25rem] filter invert dark:invert-0"
+                class="h-[1.25rem]"
+                :style="
+                  theme === 'dark' ? 'filter: invert(0);' : 'filter: invert(1);'
+                "
               />
             </button>
           </div>
