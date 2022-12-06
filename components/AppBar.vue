@@ -41,7 +41,7 @@
           <!-- Mobile Menu -->
           <div
             id="mobile_menu"
-            class="hidden absolute md:hidden mt-2 rounded w-[175px] bg-black text-white dark:bg-white dark:text-black"
+            class="hidden absolute z-10 md:hidden mt-2 rounded w-[175px] bg-black text-white dark:bg-white dark:text-black"
           >
             <ul>
               <li>
