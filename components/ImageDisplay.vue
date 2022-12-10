@@ -1,19 +1,8 @@
 <template>
-  <div :class="`imageDisplay${!loaded ? ' animate-pulse' : ''}`">
-    <div
-      class="w-[calc(50%-1rem)] sm:w-64 aspect-[inherit] rounded-[inherit] absolute z-10 hover:bg-[rgba(0,0,0,0.8)] transition-all group"
-    >
-      <button
-        aria-label="add to favorites"
-        class="hidden group-hover:flex w-full h-full justify-center items-center active:scale-90 transition-transform"
-      >
-        <img
-          src="~/assets/img/heart-svgrepo-com.svg"
-          class="w-12 aspect-auto"
-        />
-      </button>
-    </div>
-    <img :src="picture" @load="setloaded()" />
+  <div :id="picture" :class="`imageDisplay${!loaded ? ' animate-pulse' : ''}`">
+    <button @click="star">
+      <img :src="picture" @load="setloaded()" />
+    </button>
   </div>
 </template>
 
@@ -31,11 +20,17 @@ export default defineComponent({
   data() {
     return {
       loaded: false,
+      starred: false,
     }
   },
   methods: {
     setloaded() {
       this.loaded = true
+    },
+    star() {
+      this.starred = !this.starred
+
+      document.getElementById(this.picture)?.classList.toggle('starred')
     },
   },
 })

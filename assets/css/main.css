@@ -37,6 +37,18 @@
     @apply w-full h-full object-cover;
   }
 
+  .starred {
+    @apply border-4 border-green relative;
+  }
+
+  .starred::after {
+    @apply bg-starred absolute w-8 h-8 content-[''] left-[85px] bottom-[10px] animate-flyIn;
+  }
+
+  .starred::before {
+    @apply bg-black rounded-r absolute flex p-2 pl-3 pr-12 items-center text-xl content-['Starred'] left-0 bottom-[4px] animate-flyIn;
+  }
+
   .dogList {
     @apply flex flex-wrap gap-2 justify-center;
   }
