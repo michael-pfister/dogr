@@ -16,7 +16,7 @@ module.exports = {
       },
       backgroundImage: {
         'hero-pattern': "url('~/assets/img/blob-haikei.svg')",
-        'starred': "url('~/assets/img/favorite-svgrepo-com.svg')",
+        starred: "url('~/assets/img/favorite-svgrepo-com.svg')",
       },
       keyframes: {
         wiggle: {

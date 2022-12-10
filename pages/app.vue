@@ -73,21 +73,14 @@ export default defineComponent({
     }
   },
   mounted() {
-    // Horizontally align the control section to the doglist
-    if (window.screen.width > 640 /* = sm */) {
-      let dogListWidth = document.querySelector('.dogList')?.clientWidth
+    // Align control section
+    this.alignControlSection()
 
-      dogListWidth = dogListWidth ? (dogListWidth % 256) / 2 : 0 // Rule out undefined values
-
-      document
-        .querySelector('#control_section')
-        ?.setAttribute(
-          'style',
-          `padding-left: ${dogListWidth}px; padding-right: ${dogListWidth}px`
-        ) // Set padding to align the control section to the doglist
-    }
     // Infinte Scroll
     window.addEventListener('scroll', this.handleScroll)
+
+    // Check for myDogs Cookie
+    this.checkForMyDogsCookie()
   },
   methods: {
     getPictures() {
@@ -177,6 +170,25 @@ export default defineComponent({
           this.index.splice(1, 1, this.index[1] + 20)
         }
       }
+    },
+    alignControlSection() {
+      // Horizontally align the control section to the doglist
+      if (window.screen.width > 640 /* = sm */) {
+        let dogListWidth = document.querySelector('.dogList')?.clientWidth
+
+        dogListWidth = dogListWidth ? (dogListWidth % 256) / 2 : 0 // Rule out undefined values
+
+        document
+          .querySelector('#control_section')
+          ?.setAttribute(
+            'style',
+            `padding-left: ${dogListWidth}px; padding-right: ${dogListWidth}px`
+          ) // Set padding to align the control section to the doglist
+      }
+    },
+    checkForMyDogsCookie() {
+      console.log(document.cookie.split(';'))
+      document.cookie = 'myDogs=hello'
     },
   },
 })
