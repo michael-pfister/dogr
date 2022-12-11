@@ -9,7 +9,7 @@
           placeholder="Search for a breed"
         />
       </div>
-      <ul v-if="searchTerm.length > 0 && !searchOptions.includes(searchTerm)">
+      <ul v-if="searchTerm.length > 0">
         <li v-for="result in getResults()" :key="`search_result_${result}`">
           <button @click="onResultSelected(result)">
             {{ result }}
