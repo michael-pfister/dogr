@@ -6,7 +6,9 @@
         <image-display :picture="picture" />
       </li>
     </ul>
-    <p v-else class="text-center my-16">Oops! You currently do not have any starred dogs.</p>
+    <p v-else class="text-center my-16">
+      Oops! You currently do not have any starred dogs.
+    </p>
   </section>
 </template>
 
@@ -17,7 +19,7 @@ export default defineComponent({
   setup() {
     const myDogs = ref([])
 
-    return { myDogs } 
+    return { myDogs }
   },
   mounted() {
     // Check for myDogs localStorage
@@ -31,6 +33,6 @@ export default defineComponent({
       const myDogs = localStorage.getItem('myDogs')
       !myDogs && localStorage.setItem('myDogs', JSON.stringify([]))
     },
-  }
+  },
 })
 </script>
