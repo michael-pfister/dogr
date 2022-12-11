@@ -80,7 +80,7 @@ export default defineComponent({
     window.addEventListener('scroll', this.handleScroll)
 
     // Check for myDogs Cookie
-    this.checkForMyDogsCookie()
+    this.checkForMyDogsStorage()
   },
   methods: {
     getPictures() {
@@ -186,9 +186,9 @@ export default defineComponent({
           ) // Set padding to align the control section to the doglist
       }
     },
-    checkForMyDogsCookie() {
-      console.log(document.cookie.split(';'))
-      document.cookie = 'myDogs=hello'
+    checkForMyDogsStorage() {
+      const myDogs = localStorage.getItem('myDogs')
+      !myDogs && localStorage.setItem('myDogs', JSON.stringify([]))
     },
   },
 })
