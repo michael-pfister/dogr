@@ -26,7 +26,9 @@
     <section
       class="my-8 flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16"
     >
-      <div class="w-full flex flex-wrap gap-4 items-center justify-center p-4 xl:p-0">
+      <div
+        class="w-full flex flex-wrap gap-4 items-center justify-center p-4 xl:p-0"
+      >
         <step-display
           :step="1"
           title="Add Filters"
