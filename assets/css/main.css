@@ -30,7 +30,7 @@
   }
 
   .imageDisplay {
-    @apply w-full aspect-video shadow-xl dark:shadow-[0_20px_25pxpx_-5px_rgba(255,255,255,0.1)] rounded flex justify-center items-center overflow-hidden cursor-pointer;
+    @apply w-full aspect-video shadow-xl rounded flex justify-center items-center overflow-hidden cursor-pointer;
   }
 
   .imageDisplay > img {
