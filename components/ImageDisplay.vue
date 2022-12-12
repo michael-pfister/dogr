@@ -1,5 +1,5 @@
 <template>
-  <div :id="picture" class="imageDisplay animate-pulse">
+  <div :id="picture" class="imageDisplay animate-pulse bg-[rgba(0,0,0,0.3)]">
     <button @click="star">
       <img :src="picture" @load="setloaded()" />
     </button>
