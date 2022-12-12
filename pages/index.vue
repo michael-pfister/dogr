@@ -51,7 +51,7 @@
       </div>
       <div class="px-4 flex flex-col gap-2">
         <h4 class="text-gray-500 dark:text-gray-400 font-bold">HOW IT WORKS</h4>
-        <h2 class="font-bold">About</h2>
+        <h1 class="font-bold">About</h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor,
           assumenda doloremque et at minima recusandae sit iusto adipisci maxime
