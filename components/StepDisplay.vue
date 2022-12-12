@@ -1,5 +1,5 @@
 <template>
-  <div :class="`${backgroundColor} p-4 flex flex-col gap-2 rounded w-64`">
+  <div :class="`${backgroundColor} p-4 flex flex-col gap-2 rounded w-full md:w-64`">
     <div class="flex items-center gap-2">
       <img
         :src="iconSrc"
