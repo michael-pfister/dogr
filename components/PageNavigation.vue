@@ -44,6 +44,12 @@ export default defineComponent({
       index: [0, 10], // change number of pages shown here
     }
   },
+  watch: {
+    itemCount() {
+      this.selectPage(1)
+      this.index = [0, 10] // change number of pages shown here
+    },
+  },
   methods: {
     getPages() {
       return Array.from(
