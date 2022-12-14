@@ -33,8 +33,8 @@
     @apply w-full aspect-video shadow-xl rounded flex justify-center items-center overflow-hidden cursor-pointer;
   }
 
-  .imageDisplay > img {
-    @apply w-full h-full object-cover;
+  .imageDisplay > button > img {
+    @apply w-64;
   }
 
   .starred {
