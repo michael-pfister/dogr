@@ -16,6 +16,7 @@
 import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
+  transition: 'slide',
   setup() {
     const myDogs = ref([])
 
