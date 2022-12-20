@@ -9,14 +9,14 @@
       <IndexSelector @index-selected="onIndexSelected" />
     </section>
     <section class="p-2">
-      <ul class="dogList">
-        <li v-for="picture in getPictures()" :key="picture">
-          <ImageDisplay
-            :picture="picture"
-            :alt="getPictureDescription(picture)"
-          />
-        </li>
-      </ul>
+        <transition-group name="fade" class="dogList" tag="ul">
+          <li v-for="picture in getPictures()" :key="picture">
+              <ImageDisplay
+                :picture="picture"
+                :alt="getPictureDescription(picture)"
+              />
+          </li>
+        </transition-group>
     </section>
     <PageNavigation
       v-if="!infiniteScroll"
@@ -35,6 +35,7 @@ import SearchWidget from '~/components/SearchWidget.vue'
 
 export default defineComponent({
   components: { ImageDisplay, SearchWidget },
+  transition: 'fade',
   async asyncData({
     $axios,
   }): Promise<{ pictures: { breed: string; pictures: string[] }[] }> {
@@ -193,3 +194,24 @@ export default defineComponent({
   },
 })
 </script>
+
+<style scoped>
+.fade-enter-active{
+  transition: 0.2s all 0.2s ease;
+}
+
+.fade-leave-active {
+  transition: all 0.2s ease;
+}
+
+.fade-enter{
+  transform: translateX(-100vw);
+}
+.fade-enter-to{
+  transform: translateX(0);
+}
+
+.fade-leave-to {
+  transform: translateX(-100vw);
+}
+</style>
