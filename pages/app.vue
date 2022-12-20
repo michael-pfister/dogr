@@ -9,14 +9,14 @@
       <IndexSelector @index-selected="onIndexSelected" />
     </section>
     <section class="p-2">
-        <transition-group name="fade" class="dogList" tag="ul">
-          <li v-for="picture in getPictures()" :key="picture">
-              <ImageDisplay
-                :picture="picture"
-                :alt="getPictureDescription(picture)"
-              />
-          </li>
-        </transition-group>
+      <transition-group name="fade" class="dogList" tag="ul">
+        <li v-for="picture in getPictures()" :key="picture">
+          <ImageDisplay
+            :picture="picture"
+            :alt="getPictureDescription(picture)"
+          />
+        </li>
+      </transition-group>
     </section>
     <PageNavigation
       v-if="!infiniteScroll"
@@ -196,7 +196,7 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.fade-enter-active{
+.fade-enter-active {
   transition: 0.2s all 0.2s ease;
 }
 
@@ -204,10 +204,10 @@ export default defineComponent({
   transition: all 0.2s ease;
 }
 
-.fade-enter{
+.fade-enter {
   transform: translateX(-100vw);
 }
-.fade-enter-to{
+.fade-enter-to {
   transform: translateX(0);
 }
 
