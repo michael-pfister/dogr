@@ -22,13 +22,13 @@ export default defineComponent({
     const myDogs = ref([])
 
     // Enable pusher logging - don't include this in production
-    Pusher.logToConsole = true;
+    Pusher.logToConsole = true
 
     const pusher = new Pusher('0bd97ca688d0795c80e3', {
       cluster: 'eu',
     })
 
-    const channel = pusher.subscribe('chat');
+    const channel = pusher.subscribe('chat')
 
     /* channel.bind('my-event', function(data: {}) {
       alert(JSON.stringify(data));
