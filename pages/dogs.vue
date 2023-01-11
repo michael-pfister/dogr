@@ -31,21 +31,22 @@ function isImage(url: string) {
 export default defineComponent({
   data() {
     let images = this.$route.query.images || []
-    console.log(images)
 
     try {
       images = (images as string).split(',')
-      console.log(images)
       images = images.map((image) => `https://images.dog.ceo/breeds/${image}`)
-      console.log(images)
     } catch (error) {
       images = []
     }
+
+    console.log('here')
 
     // filter out any non-image urls
     images = images
       ? (images as string[]).filter((url: string) => isImage(url))
       : []
+
+    console.log('images')
 
     return { images }
   },
