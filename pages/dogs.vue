@@ -35,6 +35,5 @@ export default defineComponent({
 
     return { images }
   },
-  methods: {},
 })
 </script>
