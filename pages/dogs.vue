@@ -1,7 +1,11 @@
 <template>
   <section class="flex flex-col items-center">
     <div class="flex gap-2">
-      <h2 class="text-center"><text class="text-green">Wow!</text> These are some awesome</h2><h2 class="animate-spin">🐶</h2><h2>!</h2>
+      <h2 class="text-center">
+        <text class="text-green">Wow!</text> These are some awesome
+      </h2>
+      <h2 class="animate-spin">🐶</h2>
+      <h2>!</h2>
     </div>
     <ul v-if="images.length" class="dogList my-8">
       <li v-for="(image, index) in images" :key="`dog_${index}`">

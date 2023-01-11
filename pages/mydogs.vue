@@ -8,7 +8,9 @@
         </li>
       </ul>
       <a
-        :href="`https://twitter.com/intent/tweet?text=${encodeURI('I just found a couple of cool looking 🐶 on Dogr. Check them out!\n')}&url=${getImageQueryData()}&hashtags=dogs`"
+        :href="`https://twitter.com/intent/tweet?text=${encodeURI(
+          'I just found a couple of cool looking 🐶 on Dogr. Check them out!\n'
+        )}&url=${getImageQueryData()}&hashtags=dogs`"
         target="_blank"
         class="bg-[#1DA1F2] p-2 rounded text-black text-xl flex gap-2 items-center w-40 justify-center mx-auto transition hover:scale-110"
         ><img src="~/assets/img/twitter-svgrepo-com.svg" class="w-8" />Tweet</a
@@ -43,8 +45,10 @@ export default defineComponent({
       !myDogs && localStorage.setItem('myDogs', JSON.stringify([]))
     },
     getImageQueryData() {
-      return `https://dogr.vercel.app/dogs?images=${this.myDogs.map((image) => image.split('breeds/')[1]).join(',')}`
-    }
+      return `https://dogr.vercel.app/dogs?images=${this.myDogs
+        .map((image) => image.split('breeds/')[1])
+        .join(',')}`
+    },
   },
 })
 </script>
