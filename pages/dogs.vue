@@ -25,8 +25,12 @@ export default defineComponent({
   data() {
     let images = this.$route.query['images[]'] || []
 
-    // value gets passed as a string if there is only one image so we need to convert it to an array
-    images = Array.isArray(images) ? images : [images]
+    try {
+      images = JSON.parse(images as string)
+      images = Array.isArray(images) ? images : []
+    } catch (error) {
+      images = []
+    }
 
     // filter out any non-image urls
     images = images

@@ -7,7 +7,19 @@
           <image-display :picture="picture" />
         </li>
       </ul>
-      <button>share <img src="" /></button>
+      <a
+        href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+        target="_blank"
+        class="bg-[#1DA1F2] p-2 rounded text-black text-xl flex gap-2 items-center w-40 justify-center mx-auto transition hover:scale-110"
+        data-size="large"
+        data-text="I just found a couple of cool looking 🐶 on Dogr. Check them out!"
+        :data-url="`https://dogr.vercel.app/dogs?images[]=${JSON.stringify(
+          myDogs
+        )}`"
+        data-hashtags="dogs"
+        data-show-count="false"
+        ><img src="~/assets/img/twitter-svgrepo-com.svg" class="w-8" />Tweet</a
+      >
     </div>
     <p v-else class="text-center my-16">
       Oops! You currently do not have any starred dogs.
