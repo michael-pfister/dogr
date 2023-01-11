@@ -1,5 +1,8 @@
 <template>
   <section class="flex flex-col items-center">
+    <div class="flex gap-2">
+      <h2 class="text-center"><text class="text-green">Wow!</text> These are some awesome</h2><h2 class="animate-spin">🐶</h2><h2>!</h2>
+    </div>
     <ul v-if="images.length" class="dogList my-8">
       <li v-for="(image, index) in images" :key="`dog_${index}`">
         <ImageDisplay :picture="image" />
@@ -23,11 +26,11 @@ function isImage(url: string) {
 
 export default defineComponent({
   data() {
-    let images = this.$route.query['images[]'] || []
+    let images = this.$route.query.images || []
 
     try {
-      images = JSON.parse(images as string)
-      images = Array.isArray(images) ? images : []
+      images = (images as string).split(',')
+      images = images.map((image) => `https://images.dog.ceo/breeds/${image}`)
     } catch (error) {
       images = []
     }
