@@ -1,5 +1,5 @@
 <template>
-  <!-- fixes SSR bug, do not remove -->
+  <!-- prevents SSR bug, do not remove -->
   <client-only>
     <section class="flex flex-col items-center">
       <div class="flex gap-2">
