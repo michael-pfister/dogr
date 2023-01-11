@@ -2,18 +2,19 @@
   <!-- prevents SSR bug, do not remove -->
   <client-only>
     <section class="flex flex-col items-center">
-      <div class="flex gap-2">
-        <h2 class="text-center">
-          <text class="text-green">Wow!</text> These are some awesome
-        </h2>
-        <h2 class="animate-spin">🐶</h2>
-        <h2>!</h2>
+      <div v-if="images.length">
+        <div class="flex gap-2 justify-center">
+          <h2 class="text-green">Wow!</h2>
+          <h2>These are some awesome</h2>
+          <h2 class="animate-spin">🐶</h2>
+          <h2>!</h2>
+        </div>
+        <ul class="dogList my-8">
+          <li v-for="(image, index) in images" :key="`dog_${index}`">
+            <ImageDisplay :picture="image" />
+          </li>
+        </ul>
       </div>
-      <ul v-if="images.length" class="dogList my-8">
-        <li v-for="(image, index) in images" :key="`dog_${index}`">
-          <ImageDisplay :picture="image" />
-        </li>
-      </ul>
       <p v-else class="text-center my-16">
         Oops! Seems like your link got corrupted.
       </p>
