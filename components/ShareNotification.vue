@@ -24,16 +24,15 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  props: {
-    link: {
-      type: String,
-      required: true,
-    },
-  },
   data() {
     return {
       show: false,
     }
+  },
+  computed: {
+    link() {
+      return this.$store.state.shareLink
+    },
   },
   watch: {
     link() {

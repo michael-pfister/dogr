@@ -31,7 +31,7 @@ export default defineComponent({
     const channel = pusher.subscribe('notifications')
 
     channel.bind('share', (link: string) => {
-      this.notificationLink = link
+      this.$store.commit('setShareLink', link)
     })
   },
 })

@@ -7,14 +7,34 @@
           <image-display :picture="picture" />
         </li>
       </ul>
-      <a
-        :href="`https://twitter.com/intent/tweet?text=${encodeURI(
-          'I just found a couple of cool looking 🐶 on Dogr. Check them out!\n'
-        )}&url=${getImageQueryData()}&hashtags=dogs`"
-        target="_blank"
-        class="bg-[#1DA1F2] p-2 rounded text-black text-xl flex gap-2 items-center w-40 justify-center mx-auto transition hover:scale-110"
-        ><img src="~/assets/img/twitter-svgrepo-com.svg" class="w-8" />Tweet</a
-      >
+      <div class="flex gap-2 justify-center flex-wrap">
+        <button
+          class="bg-[#111] text-white p-2 rounded text-xl flex gap-2 hover:scale-105"
+        >
+          <img class="icon" src="~/assets/img/share-svgrepo-com.svg" />Share
+          Locally
+        </button>
+        <a
+          :href="`https://twitter.com/intent/tweet?text=${encodeURI(
+            'I just found a couple of cool looking 🐶 on Dogr. Check them out!\n'
+          )}&url=${getImageQueryData()}&hashtags=dogs`"
+          target="_blank"
+          class="bg-[#1DA1F2] p-2 rounded text-black text-xl flex gap-2 items-center w-40 justify-center transition hover:scale-105"
+          ><img
+            src="~/assets/img/twitter-svgrepo-com.svg"
+            class="icon"
+          />Tweet</a
+        >
+        <button
+          class="bg-[#313131] rounded p-2 hover:scale-105"
+          @click="webShare()"
+        >
+          <img
+            src="~/assets/img/link-external-01-svgrepo-com.svg"
+            class="icon"
+          />
+        </button>
+      </div>
     </div>
     <p v-else class="text-center my-16">
       Oops! You currently do not have any starred dogs.
@@ -49,6 +69,17 @@ export default defineComponent({
         .map((image) => image.split('breeds/')[1])
         .join(',')}`
     },
+    webShare() {
+      if (navigator.share) {
+        navigator.share({
+          title: 'Check out these cool 🐶!',
+          url: this.getImageQueryData(),
+        })
+      } else {
+        navigator.clipboard.writeText(this.getImageQueryData())
+      }
+    },
+    localShare() {},
   },
 })
 </script>
