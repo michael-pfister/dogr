@@ -3,7 +3,7 @@
     <AppBar />
     <main>
       <Nuxt />
-      <ShareNotification :link="notificationLink" />
+      <ShareNotification />
     </main>
   </div>
 </template>
@@ -16,11 +16,6 @@ import ShareNotification from '~/components/ShareNotification.vue'
 export default defineComponent({
   components: { ShareNotification },
   data() {
-    return {
-      notificationLink: '',
-    }
-  },
-  mounted() {
     // Enable pusher logging - don't include this in production
     // Pusher.logToConsole = true
 
@@ -33,6 +28,18 @@ export default defineComponent({
     channel.bind('share', (link: string) => {
       this.$store.commit('setShareLink', link)
     })
+
+    return { channel }
   },
+  computed: {
+    shareLink() {
+      return this.$store.state.shareLink
+    },
+  },
+  watch: {
+    shareLink() {
+      this.channel.trigger('share', this.shareLink)
+    },
+  }
 })
 </script>

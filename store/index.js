@@ -1,5 +1,5 @@
 export const state = () => ({
-  shareLink: 0,
+  shareLink: null,
 })
 
 export const getters = {

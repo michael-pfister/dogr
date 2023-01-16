@@ -10,6 +10,7 @@
       <div class="flex gap-2 justify-center flex-wrap">
         <button
           class="bg-[#111] text-white p-2 rounded text-xl flex gap-2 hover:scale-105"
+          @click="localShare()"
         >
           <img class="icon" src="~/assets/img/share-svgrepo-com.svg" />Share
           Locally
@@ -79,7 +80,9 @@ export default defineComponent({
         navigator.clipboard.writeText(this.getImageQueryData())
       }
     },
-    localShare() {},
+    localShare() {
+      this.$store.commit('setShareLink', this.getImageQueryData().split('https://dogr.vercel.app')[1])
+    },
   },
 })
 </script>
