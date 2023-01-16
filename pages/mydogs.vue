@@ -1,6 +1,5 @@
 <template>
   <section class="my-16 p-2">
-    <h2 class="text-center">My Starred Dogs</h2>
     <div v-if="myDogs.length">
       <ul class="dogList my-8">
         <li v-for="picture in myDogs" :key="picture">
