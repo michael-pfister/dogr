@@ -8,13 +8,6 @@
         </li>
       </ul>
       <div class="flex gap-2 justify-center flex-wrap">
-        <button
-          class="bg-[#111] text-white p-2 rounded text-xl flex gap-2 hover:scale-105"
-          @click="localShare()"
-        >
-          <img class="icon" src="~/assets/img/share-svgrepo-com.svg" />Share
-          Locally
-        </button>
         <a
           :href="`https://twitter.com/intent/tweet?text=${encodeURI(
             'I just found a couple of cool looking 🐶 on Dogr. Check them out!\n'
@@ -79,12 +72,6 @@ export default defineComponent({
       } else {
         navigator.clipboard.writeText(this.getImageQueryData())
       }
-    },
-    localShare() {
-      this.$store.commit(
-        'setShareLink',
-        this.getImageQueryData().split('https://dogr.vercel.app')[1]
-      )
     },
   },
 })
