@@ -1,0 +1,23 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "nuxt.config.js",
+        "use": "@nuxt/now-builder",
+        "config": {
+          "serverRuntimeConfig": {},
+          "publicRuntimeConfig": {}
+        }
+      }
+    ],
+    "routes": [
+      {
+        "handle": "filesystem"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/nuxt-ssr-bundle/$1"
+      }
+    ]
+  }
+  
