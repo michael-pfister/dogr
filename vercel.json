@@ -3,7 +3,21 @@
     "builds": [
       {
         "src": "nuxt.config.js",
-        "use": "@nuxtjs/vercel-builder"
+        "use": "@nuxtjs/now-builder",
+        "config": {
+          "serverRuntimeConfig": {},
+          "publicRuntimeConfig": {}
+        }
+      }
+    ],
+    "routes": [
+      {
+        "handle": "filesystem"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/nuxt-ssr-bundle/$1"
       }
     ]
   }
+  
