@@ -40,6 +40,6 @@ export default defineComponent({
     shareLink() {
       this.channel.trigger('share', this.shareLink)
     },
-  }
+  },
 })
 </script>

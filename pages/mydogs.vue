@@ -81,7 +81,10 @@ export default defineComponent({
       }
     },
     localShare() {
-      this.$store.commit('setShareLink', this.getImageQueryData().split('https://dogr.vercel.app')[1])
+      this.$store.commit(
+        'setShareLink',
+        this.getImageQueryData().split('https://dogr.vercel.app')[1]
+      )
     },
   },
 })
