@@ -4,9 +4,8 @@
     <section class="flex flex-col items-center">
       <div v-if="images.length">
         <div class="flex gap-2 justify-center">
-          <h2 class="text-green">Wow!</h2>
-          <h2>These are some awesome</h2>
-          <h2 class="animate-spin">🐶</h2>
+          <h2><span class="text-green">Wow!</span> These are some awesome</h2>
+          <h2 class="animate-spin" aria-label="dogs">🐶</h2>
           <h2>!</h2>
         </div>
         <ul class="dogList my-8">

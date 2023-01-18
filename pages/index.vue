@@ -67,6 +67,27 @@
         >
       </div>
     </section>
+    <section class="flex justify-around items-center gap-12 my-16 flex-wrap">
+      <div>
+        <h2 class="max-w-md text-center">
+          <span class="font-bold">Click</span> on any image to save it under
+          <nuxt-link to="/mydogs" class="text-green font-bold"
+            >My Dogs</nuxt-link
+          >.
+        </h2>
+        <p class="text-center mt-2 text-xl">
+          ( Click for a second time to
+          <span class="text-green">remove</span> it. )
+        </p>
+      </div>
+      <div class="relative scale-150 mx-16">
+        <ImageDisplay :picture="require('~/assets/img/shiba_inu.webp')" />
+        <img
+          src="~/assets/img/click-svgrepo-com.svg"
+          class="w-16 absolute right-2 bottom-2 animate-bounce"
+        />
+      </div>
+    </section>
   </div>
 </template>
 
