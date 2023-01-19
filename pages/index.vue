@@ -55,7 +55,10 @@
         <h4 class="text-gray-500 dark:text-gray-400 font-bold">HOW IT WORKS</h4>
         <h1 class="font-bold">About</h1>
         <p>
-          Dogr is a powerful tool that allows you to find pictures of any dog in a matter of seconds. You can search for specific breeds, or just browse through the list of dogs. You can also star your favorites and share them with friends.
+          Dogr is a powerful tool that allows you to find pictures of any dog in
+          a matter of seconds. You can search for specific breeds, or just
+          browse through the list of dogs. You can also star your favorites and
+          share them with friends.
         </p>
         <nuxt-link
           to="/app"
@@ -85,9 +88,14 @@
         />
       </div>
     </section>
-    <section class="flex flex-wrap-reverse justify-evenly items-center p-2 gap-2">
+    <section
+      class="flex flex-wrap-reverse justify-evenly items-center p-2 gap-2"
+    >
       <img src="~/assets/img/tweet.webp" class="w-[500px] rounded-lg" />
-      <h2 class="max-w-md text-center"><span class="font-bold">Share</span> your favorite images on <span class="font-bold text-green">Any Platform</span>.</h2>      
+      <h2 class="max-w-md text-center">
+        <span class="font-bold">Share</span> your favorite images on
+        <span class="font-bold text-green">Any Platform</span>.
+      </h2>
     </section>
   </div>
 </template>
