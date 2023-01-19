@@ -38,7 +38,7 @@
         <step-display
           :step="2"
           title="Star Your Favorites"
-          description="Click on an image to add it to your dog list."
+          description="Click on an image to save it under My Dogs."
           :icon-src="require('~/assets/img/favorite-svgrepo-com.svg')"
           background-color="bg-green"
           text-color="text-black"
@@ -46,7 +46,7 @@
         <step-display
           :step="3"
           title="Share With Friends"
-          description="Use the share button to send your dog list to friends."
+          description="Use the share button to send your favorites to friends."
           :icon-src="require('~/assets/img/share-svgrepo-com.svg')"
           background-color="bg-gray-700"
         />
@@ -74,7 +74,7 @@
         </h2>
         <p class="text-center mt-2 text-xl">
           ( Click for a second time to
-          <span class="text-green">remove</span> it. )
+          <span class="text-green font-bold">remove</span> it. )
         </p>
       </div>
       <div class="relative scale-150 mx-16">
@@ -84,6 +84,10 @@
           class="w-16 absolute right-2 bottom-2 animate-bounce"
         />
       </div>
+    </section>
+    <section class="flex flex-wrap-reverse justify-evenly items-center p-2 gap-2">
+      <img src="~/assets/img/tweet.webp" class="w-[500px] rounded-lg" />
+      <h2 class="max-w-md text-center"><span class="font-bold">Share</span> your favorite images on <span class="font-bold text-green">Any Platform</span>.</h2>      
     </section>
   </div>
 </template>
