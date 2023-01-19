@@ -77,7 +77,7 @@
         class="flex flex-wrap-reverse justify-evenly items-center p-2 gap-4 bg-green text-black"
       >
         <img src="~/assets/img/tweet.webp" class="w-[500px] rounded-lg" />
-        <h2 class="max-w-md text-center">
+        <h2 class="max-w-md text-center font-bold">
           Share Your Favorite Images on Any Platform.
         </h2>
       </div>
