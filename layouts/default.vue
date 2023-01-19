@@ -5,7 +5,7 @@
       <Nuxt />
     </main>
     <footer
-      class="flex flex-wrap gap-4 justify-center md:justify-between items-end p-2 m-2 mt-16 bg-[#000] rounded text-white"
+      class="flex flex-wrap gap-4 justify-center md:justify-between items-end p-2 m-2 mt-20 bg-[#000] rounded text-white"
     >
       <div class="max-w-md">
         <nuxt-link class="flex gap-2 items-center h-12" to="/">
