@@ -1,4 +1,4 @@
-# dogr
+# Dogr.
 
 ## Build Setup
 
