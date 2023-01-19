@@ -67,7 +67,27 @@
         >
       </div>
     </section>
-    <section class="flex justify-around items-center gap-12 my-16 flex-wrap">
+    <section>
+      <img
+        src="~/assets/img/layered-waves-haikei.svg"
+        class="w-full"
+        aria-hidden="true"
+      />
+      <div
+        class="flex flex-wrap-reverse justify-evenly items-center p-2 gap-4 bg-green text-black"
+      >
+        <img src="~/assets/img/tweet.webp" class="w-[500px] rounded-lg" />
+        <h2 class="max-w-md text-center">
+          Share Your Favorite Images on Any Platform.
+        </h2>
+      </div>
+      <img
+        src="~/assets/img/layered-waves-haikei.svg"
+        class="w-full rotate-180"
+        aria-hidden="true"
+      />
+    </section>
+    <section class="flex justify-around items-center gap-12 my-8 flex-wrap">
       <div>
         <h2 class="max-w-md text-center">
           <span class="font-bold">Click</span> on any image to save it under
@@ -87,15 +107,6 @@
           class="w-16 absolute right-2 bottom-2 animate-bounce"
         />
       </div>
-    </section>
-    <section
-      class="flex flex-wrap-reverse justify-evenly items-center p-2 gap-2"
-    >
-      <img src="~/assets/img/tweet.webp" class="w-[500px] rounded-lg" />
-      <h2 class="max-w-md text-center">
-        <span class="font-bold">Share</span> your favorite images on
-        <span class="font-bold text-green">Any Platform</span>.
-      </h2>
     </section>
   </div>
 </template>
