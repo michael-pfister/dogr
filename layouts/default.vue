@@ -28,6 +28,7 @@
             GitHub
             <img class="w-6" src="~/assets/img/github-svgrepo-com.svg" />
           </a>
+          .
         </p>
       </div>
     </footer>
