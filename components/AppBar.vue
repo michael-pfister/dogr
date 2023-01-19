@@ -3,7 +3,7 @@
     <div class="flex gap-2 items-center">
       <nuxt-link class="flex gap-2 items-center h-12" to="/">
         <NuxtLogo class="w-8" />
-        <h3>Dogr<text class="text-green">.</text></h3>
+        <h3>Dogr<span class="text-green">.</span></h3>
       </nuxt-link>
       <button aria-label="toggle theme" @click="toggleTheme">
         <img
