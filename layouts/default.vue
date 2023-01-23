@@ -17,23 +17,20 @@
           a matter of seconds.
         </p>
       </div>
-      <div class="flex gap-2">
-        <p class="flex gap-2">
-          Found a bug? Submit an issue on
-          <a
-            class="flex gap-2 underline"
-            href="https://github.com/michael-pfister/dogr"
-            target="_blank"
-          >
-            GitHub
-            <img
-              class="w-6"
-              src="~/assets/img/github-svgrepo-com.svg"
-              alt="GitHub Logo"
-            />
-          </a>
-          .
-        </p>
+      <div class="flex flex-wrap gap-2">
+        <p>Found a bug? Submit an issue on</p>
+        <a
+          class="flex gap-2 items-center underline"
+          href="https://github.com/michael-pfister/dogr"
+          target="_blank"
+        >
+          GitHub
+          <img
+            class="w-6"
+            src="~/assets/img/github-svgrepo-com.svg"
+            aria-hidden="true"
+          />
+        </a>
       </div>
     </footer>
   </div>

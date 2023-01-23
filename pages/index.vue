@@ -17,12 +17,14 @@
           Seconds.
         </h1>
       </div>
-      <img
-        src="~/assets/img/hero_dog.webp"
-        class="w-[300px] md:w-2/5 rounded"
+      <nuxt-img
+        src="/hero_dog.webp"
+        sizes="sm:300px md:400px lg:500px"
+        class="rounded"
         aria-label="a cute dog"
       />
     </section>
+    <!-- About -->
     <section
       class="my-8 flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16"
     >
@@ -69,6 +71,7 @@
         >
       </div>
     </section>
+    <!-- Share Feature -->
     <section>
       <img
         src="~/assets/img/layered-waves-haikei.svg"
@@ -93,6 +96,7 @@
         aria-hidden="true"
       />
     </section>
+    <!-- Star Feature -->
     <section class="flex justify-around items-center gap-12 my-8 flex-wrap">
       <div>
         <h2 class="max-w-md text-center">
