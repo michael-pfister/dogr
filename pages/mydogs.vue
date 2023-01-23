@@ -16,15 +16,18 @@
           ><img
             src="~/assets/img/twitter-svgrepo-com.svg"
             class="icon"
+            aria-hidden="true"
           />Tweet</a
         >
         <button
           class="bg-[#313131] rounded p-2 hover:scale-105"
+          aria-label="Share your favorite dogs"
           @click="webShare()"
         >
           <img
             src="~/assets/img/link-external-01-svgrepo-com.svg"
             class="icon"
+            aria-hidden="true"
           />
         </button>
       </div>
