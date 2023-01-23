@@ -18,3 +18,17 @@ $ yarn generate
 ```
 
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
+
+## Docker
+
+There is an image available on <a href="https://hub.docker.com/r/michaelpfister/dogr" target="_blank">hub.docker.com</a>.
+
+```bash
+# pull image
+$ docker pull michaelpfister/dogr
+
+# run in terminal
+$ docker run -it -p 3000:3000 michaelpfister/dogr
+```
+
+The Web Application should be accessible via localhost:3000.
