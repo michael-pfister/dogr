@@ -31,4 +31,4 @@ $ docker pull michaelpfister/dogr
 $ docker run -it -p 3000:3000 michaelpfister/dogr
 ```
 
-The Web Application should be accessible via localhost:3000.
+The Web Application should be accessible via <a href="http://localhost:3000/" target="_blank">localhost:3000</a>.
