@@ -19,8 +19,8 @@
       </div>
       <nuxt-img
         src="/hero_dog.webp"
-        sizes="sm:300px md:400px lg:500px"
-        class="rounded"
+        sizes="sm:300px lg:600px"
+        class="w-[300px] md:w-2/5 rounded"
         aria-label="a cute dog"
       />
     </section>
