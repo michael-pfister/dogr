@@ -26,7 +26,11 @@
             target="_blank"
           >
             GitHub
-            <img class="w-6" src="~/assets/img/github-svgrepo-com.svg" />
+            <img
+              class="w-6"
+              src="~/assets/img/github-svgrepo-com.svg"
+              alt="GitHub Logo"
+            />
           </a>
           .
         </p>

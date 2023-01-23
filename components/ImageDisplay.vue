@@ -1,7 +1,11 @@
 <template>
   <div :id="picture" class="imageDisplay animate-pulse bg-[rgba(0,0,0,0.3)]">
-    <button @click="star">
-      <img :src="picture" @load="setloaded()" />
+    <button aria-label="star this image" @click="star">
+      <img
+        :src="picture"
+        :alt="`a dog of breed ${getBreed()}`"
+        @load="setloaded()"
+      />
     </button>
   </div>
 </template>
@@ -52,6 +56,12 @@ export default defineComponent({
       }
 
       localStorage.setItem('myDogs', JSON.stringify(myDogs))
+    },
+    getBreed() {
+      // Get breed from picture
+      const breed = this.picture.split('/')[4]
+
+      return breed
     },
   },
 })

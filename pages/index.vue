@@ -52,7 +52,9 @@
         />
       </div>
       <div class="px-4 flex flex-col gap-2">
-        <h4 class="text-gray-500 dark:text-gray-400 font-bold">HOW IT WORKS</h4>
+        <span class="text-gray-500 dark:text-gray-400 font-bold"
+          >HOW IT WORKS</span
+        >
         <h1 class="font-bold">About</h1>
         <p>
           Dogr is a powerful tool that allows you to find pictures of any dog in
@@ -76,7 +78,11 @@
       <div
         class="flex flex-wrap-reverse justify-evenly items-center p-2 gap-4 bg-green text-black"
       >
-        <img src="~/assets/img/tweet.webp" class="w-[500px] rounded-lg" />
+        <img
+          src="~/assets/img/tweet.webp"
+          class="w-[500px] rounded-lg"
+          alt="a tweet of images found on dogr"
+        />
         <h2 class="max-w-md text-center font-bold">
           Share Your Favorite Images on Any Platform.
         </h2>
@@ -105,6 +111,7 @@
         <img
           src="~/assets/img/click-svgrepo-com.svg"
           class="w-16 absolute right-2 bottom-2 animate-bounce"
+          aria-hidden="true"
         />
       </div>
     </section>

@@ -11,6 +11,7 @@
           src="~/assets/img/light-bulb-svgrepo-com.svg"
           class="icon"
           :style="theme === 'dark' ? 'filter: invert(1);' : ''"
+          aria-hidden="true"
         />
       </button>
     </div>
@@ -27,6 +28,7 @@
             <button
               id="mobile_menu_toggle"
               class="p-3 rounded bg-black dark:bg-white md:hidden"
+              aria-label="open mobile menu"
               @click="openMobileMenu"
             >
               <img
@@ -35,6 +37,7 @@
                 :style="
                   theme === 'dark' ? 'filter: invert(0);' : 'filter: invert(1);'
                 "
+                aria-hidden="true"
               />
             </button>
           </div>
