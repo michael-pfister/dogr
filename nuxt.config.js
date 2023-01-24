@@ -11,19 +11,43 @@ export default {
       { name: 'format-detection', content: 'telephone=no' },
       // Primary Meta Tags
       { name: 'title', content: 'Dogr. | Find Pictures of Any Dog Breed' },
-      { name: 'description', content: 'Dogr is a powerful tool that allows you to find pictures of any dog in a matter of seconds. You can search for specific breeds, or just browse through the list of dogs.' },
+      {
+        name: 'description',
+        content:
+          'Dogr is a powerful tool that allows you to find pictures of any dog in a matter of seconds. You can search for specific breeds, or just browse through the list of dogs.',
+      },
       // Open Graph / Facebook
       { property: 'og:type', content: 'website' },
       { property: 'og:url', content: 'https://dogr.vercel.app/' },
-      { property: 'og:title', content: 'Dogr. | Find Pictures of Any Dog Breed' },
-      { property: 'og:description', content: 'Dogr is a powerful tool that allows you to find pictures of any dog in a matter of seconds. You can search for specific breeds, or just browse through the list of dogs.' },
-      { property: 'og:image', content: 'https://dogr.vercel.app/meta-banner.jpeg' },
+      {
+        property: 'og:title',
+        content: 'Dogr. | Find Pictures of Any Dog Breed',
+      },
+      {
+        property: 'og:description',
+        content:
+          'Dogr is a powerful tool that allows you to find pictures of any dog in a matter of seconds. You can search for specific breeds, or just browse through the list of dogs.',
+      },
+      {
+        property: 'og:image',
+        content: 'https://dogr.vercel.app/meta-banner.jpeg',
+      },
       // Twitter
       { property: 'twitter:card', content: 'summary_large_image' },
       { property: 'twitter:url', content: 'https://dogr.vercel.app/' },
-      { property: 'twitter:title', content: 'Dogr. | Find Pictures of Any Dog Breed' },
-      { property: 'twitter:description', content: 'Dogr is a powerful tool that allows you to find pictures of any dog in a matter of seconds. You can search for specific breeds, or just browse through the list of dogs.' },
-      { property: 'twitter:image', content: 'https://dogr.vercel.app/meta-banner.jpeg' },
+      {
+        property: 'twitter:title',
+        content: 'Dogr. | Find Pictures of Any Dog Breed',
+      },
+      {
+        property: 'twitter:description',
+        content:
+          'Dogr is a powerful tool that allows you to find pictures of any dog in a matter of seconds. You can search for specific breeds, or just browse through the list of dogs.',
+      },
+      {
+        property: 'twitter:image',
+        content: 'https://dogr.vercel.app/meta-banner.jpeg',
+      },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },

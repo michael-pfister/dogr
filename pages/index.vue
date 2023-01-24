@@ -55,7 +55,10 @@
         <h4 class="text-gray-500 dark:text-gray-400 font-bold">HOW IT WORKS</h4>
         <h1 class="font-bold">About</h1>
         <p>
-          Dogr is a powerful tool that allows you to find pictures of any dog in a matter of seconds. You can search for specific breeds, or just browse through the list of dogs. You can also star your favorites and share them with friends.
+          Dogr is a powerful tool that allows you to find pictures of any dog in
+          a matter of seconds. You can search for specific breeds, or just
+          browse through the list of dogs. You can also star your favorites and
+          share them with friends.
         </p>
         <nuxt-link
           to="/app"
