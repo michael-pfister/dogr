@@ -3,10 +3,18 @@
   <client-only>
     <section class="flex flex-col items-center">
       <div v-if="images.length">
-        <div class="flex gap-2 justify-center">
-          <h2><span class="text-green">Wow!</span> These are some awesome</h2>
-          <h2 class="animate-spin" aria-label="dogs">🐶</h2>
-          <h2>!</h2>
+        <div class="flex gap-2 justify-center p-2">
+          <h2>
+            <span class="text-green">Wow!</span> These are some awesome<span
+              class="md:hidden"
+            >
+              dogs!</span
+            >
+          </h2>
+          <h2 class="hidden md:inline-block animate-spin" aria-label="dogs">
+            🐶
+          </h2>
+          <h2 class="hidden md:inline-block">!</h2>
         </div>
         <ul class="dogList my-8">
           <li v-for="(image, index) in images" :key="`dog_${index}`">
