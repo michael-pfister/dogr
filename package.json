@@ -20,7 +20,7 @@
     "consola": "*",
     "core-js": "^3.27.2",
     "nuxt-edge": "latest",
-    "vue": "^2.7.10",
+    "vue": "^3.2.47",
     "vue-server-renderer": "^2.7.10",
     "vue-template-compiler": "^2.7.10",
     "webpack": "^4.6.0"
